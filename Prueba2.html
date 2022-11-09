@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{titulo}}</h1>
+        
+        <!--v-model se utiliza para relacionar la entrada o variable con la variable de vue
+        además se puede especificar el tipo de dato escribiendo v-model="variable"-->
+        <input type="text" v-model="nuevaFruta" @keyup.enter="agregaFruta">
+
+        <!--Podemos usar la directiva v-on para escuchar eventos y ejecutar algunos JavaScript cuando se activan
+        se puede usar v-on:evento o @evento-->
+        <button @click="agregaFruta">Agregar</button>
+
+        <ul>
+            <li v-for="fruta of frutas">
+                <input type="number" v-model.number="fruta.cantidad">
+                {{fruta.nombre}}
+                <button @click="fruta.cantidad++">+</button>
+                <button @click="fruta.cantidad--">-</button>
+                <span v-if="fruta.cantidad===0">
+                    Sin stock
+                </span>
+            </li>
+        </ul>
+
+        <h4>TOTAL: {{sumarFrutas}}</h4>
+    </div>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="01.js"></script>
+</body>
+</html>

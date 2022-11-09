@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section style="border:1px solid black; width: 100%; height: auto;">
+        <div id="tablaMultiplicaciones">
+            <!--Tabla-->
+            <table style="border: 1px solid black;">
+            <!--Encaabezado-->
+                <thead>
+                    <tr>
+                        <th v-for="numero in numeros">
+                            <td>{{numero.n}}</td>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="tabla.js"></script>
+</body>
+</html>
